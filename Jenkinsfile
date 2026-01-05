@@ -3,13 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
-            steps {
-                git url: 'https://github.com/dd-devops-18/jenkins-docker-demo.git',
-                    branch: 'main'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t jenkins-demo:$BUILD_NUMBER .'
